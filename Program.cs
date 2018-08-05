@@ -12,7 +12,7 @@ namespace Lab7
         static void Main(string[] args)
         {
             
-            Console.WriteLine("Please enter your name");
+            Console.WriteLine("Please enter your first and last name");
             string input = Console.ReadLine();
             ValidateName(input);
 
@@ -22,7 +22,7 @@ namespace Lab7
             ValidateEmail(input1);
 
            
-            Console.WriteLine("Please enter your phone number (---)--- ----");
+            Console.WriteLine("Please enter your phone number: --- --- ----");
             string input2 = Console.ReadLine();
             ValidatePhoneNumber(input2);
 
@@ -61,7 +61,7 @@ namespace Lab7
         }
         public static string ValidatePhoneNumber(string phoneNumber)
         {
-            if (Regex.IsMatch(phoneNumber, @"^\d{3}\s\d{3}\s\d{4}$"))
+            if (Regex.IsMatch(phoneNumber, @"^\+?(\d[\d-. ]+)?(\([\d-. ]+\))?[\d-. ]+\d$"))
             {
                 Console.WriteLine("You got it right!");
             }
